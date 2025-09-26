@@ -1,6 +1,0 @@
-(defun shuffle (list)
-  (loop with vec = (coerce list 'vector)
-        as i from 1 below (length vec)
-        do (rotatef (aref vec i) (aref vec (random (1+ i))))
-        finally (return (coerce vec 'list))))
-(shuffle `(1 2 3 4 5))
