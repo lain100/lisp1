@@ -8,7 +8,7 @@ function canPayJust(amount, counts, values = [1, 5, 10, 50, 100, 500]) {
     for (let a = 0; a <= dp.max; a++) {
       if (!dp[a]) continue;
       let k = a + value;
-      for (let c = 0; c < counts[index] && k <= amount; c++) {
+      for (let c = counts[index]; c > 0 && k <= amount; c--) {
         next[k] = true;
         k += value;
       }
