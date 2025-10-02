@@ -4,15 +4,14 @@ function compareCosper(goto1, goto2, destList) {
   if (cospers[0] > cospers[1]) return goto1;
   if (cospers[0] < cospers[1]) return goto2;
   return true;
-}
+};
 
 function getCosper(plase, destList) {
-  for (let i = 0; i < destList.length; i++) {
-    const d = destList[i];
+  for (const d of destList) {
     if (plase == d[2]) return d[1] / d[0];
   }
   return false;
-}
+};
 
 const destList = [
   [1, 10, 'a'],
