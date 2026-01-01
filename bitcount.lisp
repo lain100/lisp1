@@ -1,6 +1,0 @@
-(defun bit-count32 (n)
-  (loop as buff = n then (+ (logand buff musk) (logand (ash buff shift) musk))
-        as musk in '(#x55555555 #x33333333 #x0f0f0f0f #x00ff00ff #xffff)
-        as shift = -1 then (* shift 2)
-        finally (return buff)))
-(bit-count32 7)
